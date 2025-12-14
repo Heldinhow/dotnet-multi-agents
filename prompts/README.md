@@ -11,14 +11,13 @@ This is a multi-agent orchestration system specialized in .NET development, impl
 1. **Test-Time Improvement** — Improve during execution, not training
 2. **Evidence-Based Decisions** — Never finalize without validation proof
 3. **Targeted Refinement** — Learn from failures, don't just retry
-4. **Cost-Aware Execution** — Optimize quality within resource constraints
 
 ## Architecture (Poetiq-Aligned)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │              META-SYSTEM (Orchestration Layer)                  │
-│      Model Selection • Strategy Config • Cost Optimization      │
+│           Model Selection   •   Strategy Config                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
@@ -59,7 +58,7 @@ This is a multi-agent orchestration system specialized in .NET development, impl
 | 03 | **Result Pattern** | `03-result-pattern-expert.md` | CODE | FluentResults, error handling |
 | 04 | **Caching Expert** | `04-caching-decorator-expert.md` | CODE | Decorator pattern, cache strategies |
 | 05 | **Quality Auditor** | `05-quality-auditor.md` | VALIDATE | Self-audit, termination decisions |
-| 06 | **Task Planner** | `06-task-planner.md` | ANALYZE | Task decomposition, cost optimization |
+| 06 | **Task Planner** | `06-task-planner.md` | ANALYZE | Task decomposition, planning |
 | 07 | **Code Executor** | `07-code-executor.md` | VALIDATE | Build, test, static analysis |
 | 08 | **System Overview** | `08-system-overview.md` | Reference | Complete architecture documentation |
 
@@ -84,9 +83,6 @@ When refinement is needed, the system:
 2. Identifies root cause
 3. Targets the fix (not retry blindly)
 4. Tracks progress across iterations
-
-### 5. Cost-Aware Execution
-The Meta-System tracks costs and prefers cheaper paths when quality is equivalent.
 
 ## Termination Criteria
 

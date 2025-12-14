@@ -19,7 +19,7 @@ A collection of **expert AI agent prompts** designed to work together in an orch
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │              META-SYSTEM (Orchestration Layer)                  │
-│      Model Selection • Strategy Config • Cost Optimization      │
+│           Model Selection   •   Strategy Config                 │
 └────────────────────────────────────┬────────────────────────────┘
                                      │
                                      ▼
@@ -57,7 +57,7 @@ A collection of **expert AI agent prompts** designed to work together in an orch
 | ⚡ **Result Pattern** | FluentResults, error handling, railway programming | CODE |
 | 💾 **Caching Expert** | Decorator pattern, cache strategies, invalidation | CODE |
 | ✅ **Quality Auditor** | Self-audit, validation, termination decisions | VALIDATE |
-| 📋 **Task Planner** | Decomposition, dependencies, cost optimization | ANALYZE |
+| 📋 **Task Planner** | Decomposition, dependencies, planning | ANALYZE |
 | 🔧 **Code Executor** | Build, test, static analysis | VALIDATE |
 
 ---
@@ -123,9 +123,6 @@ No guessing. The Quality Auditor requires concrete test results before finalizin
 □ Architecture violations = 0
 □ Critical issues = 0
 ```
-
-### 💰 Cost-Aware Execution
-Tracks computational cost and prefers efficient paths when quality is equivalent.
 
 ### 🛡️ Anti-Hallucination
 Active detection of invented APIs, wrong syntax, and fictional packages.

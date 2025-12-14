@@ -9,19 +9,18 @@ This system implements **iterative self-improving AI** for .NET development:
 1. **Test-Time Improvement** — The system improves during execution, not training
 2. **Evidence-Based Decisions** — Never finalize without validation proof
 3. **Targeted Refinement** — Learn from failures, don't just retry
-4. **Cost-Aware Execution** — Optimize for quality within resource constraints
 
 ## Complete Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                          META-SYSTEM (Orchestration Layer)                  │
-│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────────┐      │
-│  │  Model Selection │  │  Strategy Config │  │  Cost Optimization   │      │
-│  │  • fast          │  │  • max_iter: 5   │  │  • track costs       │      │
-│  │  • balanced      │  │  • threshold:0.85│  │  • prefer cheap      │      │
-│  │  • strong        │  │  • early_exit    │  │  • cache results     │      │
-│  └──────────────────┘  └──────────────────┘  └──────────────────────┘      │
+│          ┌──────────────────┐          ┌──────────────────┐                │
+│          │  Model Selection │          │  Strategy Config │                │
+│          │  • fast          │          │  • max_iter: 5   │                │
+│          │  • balanced      │          │  • threshold:0.85│                │
+│          │  • strong        │          │  • early_exit    │                │
+│          └──────────────────┘          └──────────────────┘                │
 └────────────────────────────────────┬────────────────────────────────────────┘
                                      │
                                      ▼
@@ -132,7 +131,7 @@ ITERATION 1
 ├── ANALYZE
 │   ├── Requirements: User entity, Email validation, Repository
 │   ├── I/O Pairs: valid email → success, invalid → error
-│   └── Complexity: Medium → use "balanced" engine
+│   └── Complexity: Medium → use "balanced" strategy
 │
 ├── HYPOTHESIZE (dotnet-architect)
 │   ├── Approach: DDD with Value Object for Email
@@ -178,9 +177,6 @@ Each iteration builds on previous learnings. Failures are analyzed, not just ret
 
 ### 4. Self-Auditing with Clear Criteria
 Termination is not subjective. The Quality Auditor applies objective checklists and scores. Below threshold = refine. Above = finalize.
-
-### 5. Cost-Aware Execution
-The Meta-System tracks costs and prefers cheaper paths when quality is equivalent. Caching prevents redundant computation.
 
 ## Prompt Engineering Best Practices Applied
 
