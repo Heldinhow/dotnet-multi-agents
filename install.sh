@@ -12,8 +12,15 @@ fi
 REPO_PATH="$1"
 
 # Cria as pastas padrão se não existirem
-mkdir -p "$REPO_PATH/.github/agents"
+echo "Criando diretórios em $REPO_PATH..."
+mkdir -p "$REPO_PATH/.github"
 mkdir -p "$REPO_PATH/prompts"
+
+# Copia conteúdo da pasta .github
+if [ -d ".github" ]; then
+  echo "Copiando arquivos de .github..."
+  cp -R .github/* "$REPO_PATH/.github/"
+fi
 
 # Copia arquivos essenciais se não existirem
 for file in LICENSE README.md; do
@@ -24,19 +31,13 @@ done
 
 # Copia prompts se não existirem
 if [ -d "prompts" ]; then
+  echo "Copiando prompts..."
   for prompt in prompts/*; do
     base=$(basename "$prompt")
     if [ ! -f "$REPO_PATH/prompts/$base" ]; then
       cp "$prompt" "$REPO_PATH/prompts/"
     fi
   done
-fi
-
-# Cria README para agents se não existir
-if [ ! -f "$REPO_PATH/.github/agents/README.md" ]; then
-  echo "# Agents
-
-Coloque aqui os agentes customizados do projeto." > "$REPO_PATH/.github/agents/README.md"
 fi
 
 echo "Instalação concluída em $REPO_PATH."
