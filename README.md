@@ -4,13 +4,13 @@
 [![.NET](https://img.shields.io/badge/.NET-8.0+-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-> **Inspired by [Poetiq's ARC-AGI-2 Solver](https://poetiq.ai)** — An iterative self-improving AI orchestration system specialized in .NET development.
+> **Inspired by [Poetiq's ARC-AGI-2 Solver](https://poetiq.ai) + [GitHub Spec Kit](https://github.com/github/spec-kit)** — An iterative self-improving AI orchestration system specialized in .NET development with Spec-Driven Development.
 
 ## 🎯 What is this?
 
 A collection of **expert AI agent prompts** designed to work together in an orchestrated loop for .NET software development. The system implements the **ANALYZE → HYPOTHESIZE → CODE → VALIDATE** pattern with continuous self-auditing and refinement.
 
-### Key Principle: *"Never finalize without evidence. Always refine on failure."*
+### Key Principle: *"Spec before code. Never finalize without evidence. Always refine on failure."*
 
 ---
 
@@ -19,7 +19,7 @@ A collection of **expert AI agent prompts** designed to work together in an orch
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │              META-SYSTEM (Orchestration Layer)                  │
-│           Model Selection   •   Strategy Config                 │
+│      Model Selection • Strategy Config • Spec-Driven Dev        │
 └────────────────────────────────────┬────────────────────────────┘
                                      │
                                      ▼
@@ -59,6 +59,7 @@ A collection of **expert AI agent prompts** designed to work together in an orch
 | ✅ **Quality Auditor** | Self-audit, validation, termination decisions | VALIDATE |
 | 📋 **Task Planner** | Decomposition, dependencies, planning | ANALYZE |
 | 🔧 **Code Executor** | Build, test, static analysis | VALIDATE |
+| 📝 **Spec-Driven Agent** | Spec-Driven Development (Spec Kit) | PRE-LOOP |
 
 ---
 
@@ -103,7 +104,8 @@ dotnet-multi-agents/
     ├── 05-quality-auditor.md          # ✅ Self-Auditing
     ├── 06-task-planner.md             # 📋 Planning
     ├── 07-code-executor.md            # 🔧 Execution
-    └── 08-system-overview.md          # 📖 Full architecture
+    ├── 08-system-overview.md          # 📖 Full architecture
+    └── 09-spec-driven-agent.md        # 📝 Spec-Driven Development
 ```
 
 ---

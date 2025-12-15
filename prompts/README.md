@@ -1,6 +1,6 @@
 # .NET Multi-Agent Orchestration System
 
-> **Inspired by Poetiq's ARC-AGI-2 Solver: Iterative Solution Generation**
+> **Inspired by Poetiq's ARC-AGI-2 Solver + [GitHub Spec Kit](https://github.com/github/spec-kit)**
 
 ## Overview
 
@@ -8,16 +8,17 @@ This is a multi-agent orchestration system specialized in .NET development, impl
 
 ### Core Philosophy
 
-1. **Test-Time Improvement** — Improve during execution, not training
-2. **Evidence-Based Decisions** — Never finalize without validation proof
-3. **Targeted Refinement** — Learn from failures, don't just retry
+1. **Spec Before Code** — Define what you're building before writing code
+2. **Test-Time Improvement** — Improve during execution, not training
+3. **Evidence-Based Decisions** — Never finalize without validation proof
+4. **Targeted Refinement** — Learn from failures, don't just retry
 
 ## Architecture (Poetiq-Aligned)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │              META-SYSTEM (Orchestration Layer)                  │
-│           Model Selection   •   Strategy Config                 │
+│      Model Selection • Strategy Config • Spec-Driven Dev        │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
@@ -61,6 +62,7 @@ This is a multi-agent orchestration system specialized in .NET development, impl
 | 06 | **Task Planner** | `06-task-planner.md` | ANALYZE | Task decomposition, planning |
 | 07 | **Code Executor** | `07-code-executor.md` | VALIDATE | Build, test, static analysis |
 | 08 | **System Overview** | `08-system-overview.md` | Reference | Complete architecture documentation |
+| 09 | **Spec-Driven Agent** | `09-spec-driven-agent.md` | PRE-LOOP | Spec-Driven Development (GitHub Spec Kit) |
 
 ## Key Differentiators (Poetiq Approach)
 
