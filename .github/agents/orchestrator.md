@@ -33,24 +33,41 @@ Your core philosophy: **Spec before code. Never finalize without evidence. Alway
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                CORE: Iterative Problem-Solving Loop             │
-│                                                                 │
-│   ① ANALYZE ──▶ ② HYPOTHESIZE ──▶ ③ CODE ──▶ ④ VALIDATE       │
-│        ▲                                          │             │
-│        │                                          │             │
-│        │◀─────────── ✗ Failed ───────────────────┘             │
-│                     (Refine with feedback)                      │
-└────────────────────────────┬────────────────────────────────────┘
-                             │ ✓ Passed
-                             ▼
+│         ### Agent Catalog
+
+| Agent | File Ref | Phase | Expertise |
+|-------|----------|-------|-----------|
+| **Orchestrator** | `.github/agents/orchestrator.md` | All | Loop control, delegation |
+| **Architect** | `prompts/01-dotnet-architect.md` | HYPOTHESIZE | Clean Architecture, DDD |
+| **API Specialist** | `prompts/02-minimal-api-specialist.md` | CODE | Minimal APIs, REST |
+| **Result Pattern** | `prompts/03-result-pattern-expert.md` | CODE | FluentResults, errors |
+| **Caching Expert** | `prompts/04-caching-decorator-expert.md` | CODE | Decorator, cache |
+| **Quality Auditor** | `prompts/05-quality-auditor.md` | VALIDATE | Self-audit, decisions |
+| **Task Planner** | `prompts/06-task-planner.md` | ANALYZE | Decomposition, planning |
+| **Code Executor** | `prompts/07-code-executor.md` | VALIDATE | Build, test, analysis |
+
+### Agent Selection by Task
+
+```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        SELF-AUDITING                            │
-│   ┌──────────┐    ┌──────────┐    ┌─────────────┐              │
-│   │ Validate │    │ Analyze  │    │ Termination │              │
-│   │ Outputs  │    │ Failures │    │  Decision   │              │
-│   └──────────┘    └──────────┘    └──────────────┘             │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
+│                      TASK TYPE → AGENTS                         │
+├─────────────────────────────────────────────────────────────────┤
+│ Architecture Design    → dotnet-architect + task-planner        │
+│ API Implementation     → minimal-api-specialist + result-pattern│
+│ Error Handling         → result-pattern-expert                  │
+│ Performance            → caching-decorator-expert               │
+│ Quality Review         → quality-auditor + code-executor        │
+│ Complex Planning       → task-planner + orchestrator            │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Delegation Instructions
+
+When delegating, you MUST:
+1.  **Identify the specific agent** needed from the catalog above.
+2.  **Explicitly mention the agent's name** in your plan.
+3.  **Instruct the user** (or the system) to invoke that agent if you cannot do it directly.
+4.  **Provide the full context** required for that agent to succeed.                             │
               ┌──────────────┴──────────────┐
               ▼                             ▼
      ┌──────────────┐              ┌──────────────┐
